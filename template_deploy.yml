@@ -1,0 +1,14 @@
+---
+- name: Deploy Dynamic Web Page
+
+  hosts: webservers
+
+  become: true
+
+  tasks:
+
+    - name: Deploy Template
+
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html

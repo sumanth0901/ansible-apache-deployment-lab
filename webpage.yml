@@ -1,0 +1,16 @@
+---
+- name: Deploy Web Page
+  hosts: webservers
+  become: true
+
+  tasks:
+    - name: Careate index.html
+      copy:
+        dest: /var/www/html/index.html
+        content: |
+          <html>
+          <body>
+          <h1>Apache deployed using Ansible</h1>
+          <h2>Created by Sumanth</h2>
+          </body>
+          </html>
